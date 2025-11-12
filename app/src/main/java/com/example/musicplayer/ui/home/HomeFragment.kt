@@ -7,8 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.musicplayer.databinding.FragmentHomeBinding
 
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+//import com.example.musicplayer.R // Required to access resource IDs
+import android.view.KeyEvent
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -31,6 +36,17 @@ class HomeFragment : Fragment() {
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+
+            // ==========================================================
+            // >>>>>> NEW NAVIGATION CODE IS INSERTED HERE <<<<<<
+            // ==========================================================
+
+//            val nowPlayingButton: Button = binding.settingsButton
+
+//            nowPlayingButton.setOnClickListener {
+//
+//                nowPlayingButton.text = "Now Playing"
+//            }
         }
         return root
     }
